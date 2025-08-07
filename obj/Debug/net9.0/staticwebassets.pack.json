@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/bhan/Documents/works/sites/SizeVariant/wwwroot/css/site.css",
+      "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "/Users/bhan/Documents/works/sites/SizeVariant/wwwroot/js/site.js",
+      "PackagePath": "staticwebassets/js/site.js"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.TireSearchMVC.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.TireSearchMVC.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.build.TireSearchMVC.props",
+      "PackagePath": "build\\TireSearchMVC.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.TireSearchMVC.props",
+      "PackagePath": "buildMultiTargeting\\TireSearchMVC.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.TireSearchMVC.props",
+      "PackagePath": "buildTransitive\\TireSearchMVC.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

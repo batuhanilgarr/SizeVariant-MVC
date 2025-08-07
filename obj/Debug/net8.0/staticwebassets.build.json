@@ -1,0 +1,228 @@
+{
+  "Version": 1,
+  "Hash": "2d0KgdNOarIDdOJdHtMrsVq1J1iDzCBgvfP08Pzpivs=",
+  "Source": "TireSearchMVC",
+  "BasePath": "_content/TireSearchMVC",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "TireSearchMVC/wwwroot",
+      "Source": "TireSearchMVC",
+      "ContentRoot": "/Users/bhan/Documents/works/sites/SizeVariant/wwwroot/",
+      "BasePath": "_content/TireSearchMVC",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/bhan/Documents/works/sites/SizeVariant/wwwroot/css/site.css",
+      "SourceId": "TireSearchMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/bhan/Documents/works/sites/SizeVariant/wwwroot/",
+      "BasePath": "_content/TireSearchMVC",
+      "RelativePath": "css/site#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "anua3gmesq",
+      "Integrity": "prxlNlfpLMEtqgXYUsrBOzA3k0PMzs8oCC4Z25SrCRE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/site.css"
+    },
+    {
+      "Identity": "/Users/bhan/Documents/works/sites/SizeVariant/wwwroot/js/site.js",
+      "SourceId": "TireSearchMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/bhan/Documents/works/sites/SizeVariant/wwwroot/",
+      "BasePath": "_content/TireSearchMVC",
+      "RelativePath": "js/site#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9r5g87a6fr",
+      "Integrity": "JSWastkoEmIuoGjwugoNhvQMwr2B7JolyDsqhL63Sm0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/site.js"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "css/site.anua3gmesq.css",
+      "AssetFile": "/Users/bhan/Documents/works/sites/SizeVariant/wwwroot/css/site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8806"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"prxlNlfpLMEtqgXYUsrBOzA3k0PMzs8oCC4Z25SrCRE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Jul 2025 18:27:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "anua3gmesq"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-prxlNlfpLMEtqgXYUsrBOzA3k0PMzs8oCC4Z25SrCRE="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "/Users/bhan/Documents/works/sites/SizeVariant/wwwroot/css/site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8806"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"prxlNlfpLMEtqgXYUsrBOzA3k0PMzs8oCC4Z25SrCRE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Jul 2025 18:27:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-prxlNlfpLMEtqgXYUsrBOzA3k0PMzs8oCC4Z25SrCRE="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.9r5g87a6fr.js",
+      "AssetFile": "/Users/bhan/Documents/works/sites/SizeVariant/wwwroot/js/site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JSWastkoEmIuoGjwugoNhvQMwr2B7JolyDsqhL63Sm0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Jul 2025 13:47:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9r5g87a6fr"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JSWastkoEmIuoGjwugoNhvQMwr2B7JolyDsqhL63Sm0="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.js",
+      "AssetFile": "/Users/bhan/Documents/works/sites/SizeVariant/wwwroot/js/site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JSWastkoEmIuoGjwugoNhvQMwr2B7JolyDsqhL63Sm0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Jul 2025 13:47:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JSWastkoEmIuoGjwugoNhvQMwr2B7JolyDsqhL63Sm0="
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+@model List<TireSearchMVC.Models.VehicleModelModel>
+@{
+    ViewData["Title"] = "Vehicle Models";
+    Layout = "_Layout";
+}
+
+<div class="header">
+    <h1 class="title">Vehicle Models</h1>
+    <p class="subtitle">Araç modellerini görüntüleyin ve arayın.</p>
+</div>
+
+<div class="search-container">
+    <form asp-action="Index" asp-controller="VehicleModel" method="get" class="search-form">
+        <div class="search-box">
+            <input type="text" name="search" value="@ViewBag.Search" placeholder="Model ara..." class="search-input" />
+            <button type="submit" class="search-btn">Ara</button>
+        </div>
+        <div class="search-stats">
+            <span>Toplam: @Model.Count</span>
+        </div>
+    </form>
+</div>
+
+@if (Model.Count == 0)
+{
+    <div class="empty-state">
+        <h3>Kayıt bulunamadı</h3>
+    </div>
+}
+else
+{
+    <div class="results-grid">
+        @foreach (var m in Model)
+        {
+            <div class="tire-card">
+                <h3>@m.BrandDescription - @m.GroupDescription</h3>
+                <div class="tire-info">
+                    <span><strong>Brand ID:</strong> @m.BrandUbyId</span>
+                    <span><strong>Group ID:</strong> @m.GroupUbyId</span>
+                    <span><strong>Model ID:</strong> @m.UbyId</span>
+                    @if (m.ModifiedTime != null)
+                    {
+                        <span><strong>Güncellendi:</strong> @m.ModifiedTime.Value.ToShortDateString()</span>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}

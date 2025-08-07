@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Lastik Arama Sistemi</title>
+    <link rel="stylesheet" href="~/css/site.css?v=@DateTime.Now.Ticks" />
+</head>
+<body>
+    <div class="page">
+        <aside class="sidebar">
+            <!-- Mobile Toggle -->
+            <input type="checkbox" id="nav-toggle" class="nav-checkbox" hidden />
+            <label for="nav-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <h2 class="menu-title">BackOffice Brisa</h2>
+            <nav class="nav-wrapper">
+                <ul class="menu-list">
+                    <li class="special-menu">
+                        <a href="/SizeVariant" class="menu-link special">SizeVariant</a>
+                    </li>
+                    @* <li class="special-menu"> *@
+                    @*     <a href="/Brand" class="menu-link special">Brand Search</a> *@
+                    @* </li> *@
+                    @* <li class="special-menu"> *@
+                    @*     <a href="/VehicleGroup" class="menu-link">Vehicle Groups</a> *@
+                    @* </li> *@
+                    @* <li class="special-menu"> *@
+                    @*     <a href="/VehicleModel" class="menu-link">Vehicle Models</a> *@
+                    @* </li> *@
+                    @* <li class="special-menu"> *@
+                    @*     <a href="/VehicleVersion" class="menu-link">Vehicle Versions</a> *@
+                    @* </li> *@
+                    @* <li class="special-menu"> *@
+                    @*     <a href="/BrandCodeDescription" class="menu-link">Brand Code Descriptions</a> *@
+                    @* </li> *@
+                    @* <li class="special-menu"> *@
+                    @*     <a href="/ParentGroup" class="menu-link">Parent Groups</a> *@
+                    @* </li> *@
+                    @* <li class="special-menu"> *@
+                    @*     <a href="/Season" class="menu-link">Seasons</a> *@
+                    @* </li> *@
+                    @* <li class="special-menu"> *@
+                    @*     <a href="/TsSegment" class="menu-link">Ts Segments</a> *@
+                    @* </li> *@
+                    @* <li class="special-menu"> *@
+                    @*     <a href="/SpecialUsage" class="menu-link">Special Usages</a> *@
+                    @* </li> *@
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <article class="px-4">
+                @RenderBody()
+            </article>
+        </main>
+    </div>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html> 

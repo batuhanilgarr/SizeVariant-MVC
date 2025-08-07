@@ -1,0 +1,20 @@
+using System.Text.Json;
+
+namespace TireSearchMVC.Models;
+
+public class VehicleGroupModel
+{
+    public string? UbyId { get; set; }
+    public string? Description { get; set; }
+    public DateTime? ModifiedTime { get; set; }
+
+    public static VehicleGroupModel FromJson(JsonElement element)
+    {
+        return new VehicleGroupModel
+        {
+            UbyId = element.GetProperty("ubyId").GetString(),
+            Description = element.GetProperty("description").GetString(),
+            ModifiedTime = element.TryGetProperty("modifiedtime", out var mt) && mt.ValueKind == JsonValueKind.String && DateTime.TryParse(mt.GetString(), out var dt) ? dt : null
+        };
+    }
+}

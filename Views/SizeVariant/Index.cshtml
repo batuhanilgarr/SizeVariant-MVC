@@ -1,0 +1,243 @@
+@model List<TireSearchMVC.Models.TireModel>
+@{
+    ViewData["Title"] = "Lastik Arama Sistemi";
+    Layout = "_Layout";
+    var statsComparison = ViewBag.StatsComparison as TireSearchMVC.Models.StatsComparisonModel;
+    var newProductCodes = ViewBag.NewProductCodes as HashSet<string> ?? new HashSet<string>();
+}
+
+<div class="container">
+    <header class="header">
+        <h1 class="title">Lastik Arama Sistemi</h1>
+        <p class="subtitle">Bridgestone ve Lassa lastiklerini arayın</p>
+    </header>
+
+    @if (statsComparison != null)
+    {
+        <div class="stats-comparison">
+            <div class="stats-simple">
+                @if (statsComparison.PreviousDay != null)
+                {
+                    <p>@statsComparison.PreviousDay.Date.ToString("dd.MM.yyyy") - @statsComparison.PreviousDay.TotalCount sonuç</p>
+                }
+                <p>Bugün - @statsComparison.CurrentDay.TotalCount sonuç</p>
+                @if (statsComparison.NewProductsCount > 0)
+                {
+                    <p>@statsComparison.NewProductsCount Yeni ürün var</p>
+                }
+            </div>
+        </div>
+    }
+
+    <div class="tabs">
+        <a href="@Url.Action("Index", "SizeVariant", new { searchTerm = ViewBag.SearchTerm, tab = "all" })" 
+           class="tab-btn @(ViewBag.CurrentTab == "all" ? "active" : "")">
+            <span class="tab-icon">🔍</span>
+            Tüm Lastikler
+        </a>
+        <a href="@Url.Action("Index", "SizeVariant", new { searchTerm = ViewBag.SearchTerm, tab = "bridgestone" })" 
+           class="tab-btn @(ViewBag.CurrentTab == "bridgestone" ? "active" : "")">
+            <span class="tab-icon">🔴</span>
+            Bridgestone
+        </a>
+        <a href="@Url.Action("Index", "SizeVariant", new { searchTerm = ViewBag.SearchTerm, tab = "lassa" })" 
+           class="tab-btn @(ViewBag.CurrentTab == "lassa" ? "active" : "")">
+            <span class="tab-icon">🟡</span>
+            Lassa
+        </a>
+    </div>
+
+    <div class="search-container">
+        <form method="post" action="@Url.Action("Search", "SizeVariant")" class="search-form">
+            <div class="search-box">
+                <input type="text" name="searchTerm" value="@ViewBag.SearchTerm" 
+                       placeholder="Tüm lastiklerde arama yapın..." class="search-input" />
+                <input type="hidden" name="tab" value="@ViewBag.CurrentTab" />
+                <button type="submit" class="search-btn">
+                    <span class="search-icon">🔍</span>
+                </button>
+            </div>
+        </form>
+        <div class="search-stats">
+            @if (ViewBag.DisplayedCount != null && ViewBag.DisplayedCount < ViewBag.TotalCount)
+            {
+                <span class="result-count">@ViewBag.DisplayedCount / @ViewBag.TotalCount sonuç gösteriliyor (İlk 20)</span>
+            }
+            else
+            {
+                <span class="result-count">@ViewBag.TotalCount sonuç</span>
+            }
+        </div>
+    </div>
+
+    <div class="content">
+        @if (ViewBag.Error != null)
+        {
+            <div class="error-state">
+                <h3>Hata</h3>
+                <p>@ViewBag.Error</p>
+            </div>
+        }
+        else if (Model.Count == 0)
+        {
+            <div class="empty-state">
+                <h3>Sonuç bulunamadı</h3>
+                <p>Arama kriterlerinizi değiştirmeyi deneyin.</p>
+            </div>
+        }
+        else
+        {
+            <div class="results-grid">
+                @foreach (var tire in Model)
+                {
+                    <div class="tire-card @(newProductCodes.Contains(tire.Code ?? "") ? "new-product" : "")" 
+                         onclick="showTireDetails('@tire.Code')">
+                        @if (newProductCodes.Contains(tire.Code ?? ""))
+                        {
+                            <div class="new-product-badge">YENİ</div>
+                        }
+                        <h3>@tire.Name</h3>
+                        <div class="brand-badge">@tire.Brand</div>
+                        <div class="tire-info">
+                            @if (!string.IsNullOrEmpty(tire.ModifiedTime))
+                            {
+                                var formattedDate = DateTime.TryParse(tire.ModifiedTime, out var parsedDate) 
+                                    ? parsedDate.ToString("dd.MM.yyyy HH:mm") 
+                                    : tire.ModifiedTime;
+                                <span><strong>Modified Time:</strong> @formattedDate</span>
+                            }
+                            @if (!string.IsNullOrEmpty(tire.Code))
+                            {
+                                <span><strong>Kod:</strong> @tire.Code</span>
+                            }
+                            @{ var sizeToShow = !string.IsNullOrEmpty(tire.Dimension) ? tire.Dimension : tire.Name?.Split(' ').FirstOrDefault(); }
+                            @if (!string.IsNullOrEmpty(sizeToShow))
+                            {
+                                <span><strong>Boyut:</strong> @sizeToShow</span>
+                            }
+                            @if (!string.IsNullOrEmpty(tire.PatternDescription))
+                            {
+                                <span><strong>Desen :</strong> @tire.PatternDescription</span>
+                            }
+                            @if (!string.IsNullOrEmpty(tire.PatternString))
+                            {
+                                <span><strong>Desen Kodu:</strong> @tire.PatternString</span>
+                            }
+                            @if (!string.IsNullOrEmpty(tire.Season))
+                            {
+                                <span><strong>Sezon:</strong> @tire.Season</span>
+                            }
+                            @if (!string.IsNullOrEmpty(tire.TechnicalGrouping))
+                            {
+                                <span><strong>Teknik Grup:</strong> @tire.TechnicalGrouping</span>
+                            }
+
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Tire Details Modal -->
+<div id="tireDetailsModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Lastik Detayları</h2>
+            <span class="close" onclick="closeTireDetails()">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div id="tireDetailsContent">
+                <div class="loading">Yükleniyor...</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function showTireDetails(code) {
+    if (!code) return;
+    
+    const modal = document.getElementById('tireDetailsModal');
+    const content = document.getElementById('tireDetailsContent');
+    
+    // Show modal
+    modal.style.display = 'block';
+    content.innerHTML = '<div class="loading">Yükleniyor...</div>';
+    
+    // Fetch tire details
+    fetch(`/api/tire/${code}`)
+        .then(response => response.json())
+        .then(data => {
+            content.innerHTML = generateTireDetailsTable(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            content.innerHTML = '<div class="error">Veri yüklenirken hata oluştu.</div>';
+        });
+}
+
+function closeTireDetails() {
+    document.getElementById('tireDetailsModal').style.display = 'none';
+}
+
+function generateTireDetailsTable(tire) {
+    const fields = [
+        { label: 'Kod', value: tire.code },
+        { label: 'İsim', value: tire.name },
+        { label: 'Marka', value: tire.brand },
+        { label: 'Marka Kodu', value: tire.brandCode },
+        { label: 'Boyut', value: tire.dimension },
+        { label: 'Desen Açıklaması', value: tire.patternDescription },
+        { label: 'Desen Kodu', value: tire.patternString },
+        { label: 'Sezon', value: tire.season },
+        { label: 'Sezon Kodu', value: tire.seasonCode },
+        { label: 'Teknik Grup', value: tire.technicalGrouping },
+        { label: 'Yük İndeksi', value: tire.loadIndex },
+        { label: 'Hız Derecesi', value: tire.speedRating },
+        { label: 'Aktif/Pasif Sınıflandırma', value: tire.activePassiveDescription },
+        { label: 'Gürültü Emisyonu', value: tire.noiseEmission },
+        { label: 'Gürültü Seviyesi', value: tire.noiseEmissionLevel },
+        { label: 'Ana Grup', value: tire.pcmParentGroupDescription },
+        { label: 'Servis', value: tire.pcmServiceDescription },
+        { label: 'Pozisyon', value: tire.positionDescription },
+        { label: 'Yuvarlanma Direnci', value: tire.rollingResistance },
+        { label: 'Özel Kullanım', value: tire.specialUsageDescription },
+        { label: 'Araç Sınıfı', value: tire.vehicleClass },
+        { label: 'Araç Kullanımı', value: tire.vehicleUse },
+        { label: 'Islak Tutuş', value: tire.wetGrip },
+        { label: 'En/Boy Oranı', value: tire.aspectRatio },
+        { label: 'Jant Çapı', value: tire.rimDiameter },
+        { label: 'Kesit Genişliği', value: tire.sectionWidth },
+        { label: 'Diş Deseni', value: tire.threadPatternName },
+        { label: 'Diş Deseni Açıklaması', value: tire.threadPatternDetailDescription },
+        { label: 'T-Segment', value: tire.tsegmentDescription },
+        { label: 'Güncelleme Tarihi', value: tire.modifiedTime }
+    ];
+
+    let tableHtml = '<table class="details-table">';
+    
+    fields.forEach(field => {
+        if (field.value && field.value.trim() !== '') {
+            tableHtml += `
+                <tr>
+                    <td class="label"><strong>${field.label}:</strong></td>
+                    <td class="value">${field.value}</td>
+                </tr>
+            `;
+        }
+    });
+    
+    tableHtml += '</table>';
+    return tableHtml;
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('tireDetailsModal');
+    if (event.target === modal) {
+        closeTireDetails();
+    }
+}
+</script>

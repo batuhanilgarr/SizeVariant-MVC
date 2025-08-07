@@ -1,0 +1,690 @@
+/* Modern CSS for Tire Search Application */
+
+:root {
+
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Layout */
+.page {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background: #ffffffaa;
+    backdrop-filter: blur(6px);
+    padding: 25px 15px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+}
+
+.menu-title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-link {
+    color: var(--dark-color);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 12px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.special-menu{
+    margin-bottom: 20px;
+}
+
+article{
+    background: darkcyan;
+}
+
+
+.menu-link:hover {
+    color: red;
+}
+
+.menu-link.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: darkseagreen !important;
+    border: 2px solid azure;
+    color: black;
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: black;
+    text-decoration: none;
+}
+
+.tab-btn.active {
+    background: cornflowerblue !important;
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tab-icon {
+    font-size: 1.2rem;
+}
+
+/* Search */
+.search-container {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: var(--box-shadow);
+}
+
+.search-form {
+    margin: 0;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #e9ecef;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.search-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-1px);
+}
+
+.search-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Content */
+.content {
+    background: var(--light-color);
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+    min-height: 400px;
+    color: #333;
+}
+
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    color: var(--dark-color);
+}
+
+.content p {
+    color: #495057;
+}
+
+.content span {
+    color: #495057;
+}
+
+.content strong {
+    color: var(--dark-color);
+}
+
+/* Error State */
+.error-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--danger-color);
+    background: rgba(220, 53, 69, 0.1);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(220, 53, 69, 0.2);
+}
+
+.error-state h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: var(--danger-color);
+}
+
+.error-state p {
+    font-size: 1rem;
+    opacity: 0.8;
+    color: var(--danger-color);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: #6c757d;
+    background: rgba(108, 117, 125, 0.1);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(108, 117, 125, 0.2);
+}
+
+.empty-state h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #495057;
+}
+
+.empty-state p {
+    font-size: 1rem;
+    opacity: 0.8;
+    color: #6c757d;
+}
+
+/* Loading State */
+.loading-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--primary-color);
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.loading-state h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.loading-state p {
+    font-size: 1rem;
+    opacity: 0.8;
+    color: var(--primary-color);
+}
+
+/* Results Grid */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+/* Tire Card */
+.tire-card {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    transition: var(--transition);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.tire-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tire-card.new-product {
+    border-color: var(--success-color);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fff8 100%);
+}
+
+.new-product-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--success-color);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.tire-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.tire-card h3 {
+    color: var(--dark-color);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+.brand-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tire-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tire-info span {
+    font-size: 0.9rem;
+    color: #495057;
+    line-height: 1.4;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.tire-info strong {
+    color: var(--dark-color);
+    font-weight: 600;
+    display: inline-block;
+    min-width: 120px;
+}
+
+/* Daily Stats Comparison */
+.stats-comparison {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: var(--box-shadow);
+}
+
+.stats-simple {
+    text-align: center;
+}
+
+.stats-simple p {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    color: var(--dark-color);
+}
+
+.stats-simple p:last-child {
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+.stats-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.previous-stats, .current-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.previous-stats h4, .current-stats h4 {
+    margin: 0;
+    color: var(--dark-color);
+    font-size: 1rem;
+}
+
+.count {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.difference {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.difference.positive {
+    background: var(--success-color);
+    color: white;
+}
+
+.difference.negative {
+    background: var(--danger-color);
+    color: white;
+}
+
+.new-products {
+    margin-left: auto;
+}
+
+.new-badge {
+    background: var(--success-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow: hidden;
+    animation: slideIn 0.3s ease;
+}
+
+.modal-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.close {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close:hover {
+    opacity: 0.7;
+}
+
+.modal-body {
+    padding: 20px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.details-table tr {
+    border-bottom: 1px solid #e9ecef;
+}
+
+.details-table tr:last-child {
+    border-bottom: none;
+}
+
+.details-table td {
+    padding: 12px 8px;
+    vertical-align: top;
+}
+
+.details-table .label {
+    width: 200px;
+    color: var(--dark-color);
+    font-weight: 500;
+}
+
+.details-table .value {
+    color: #495057;
+    word-break: break-word;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.error {
+    text-align: center;
+    padding: 40px;
+    color: var(--danger-color);
+    font-size: 1.1rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    /* Mobile Nav Hamburger */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    .hamburger span {
+        width: 26px;
+        height: 3px;
+        background: var(--dark-color);
+        border-radius: 3px;
+        transition: var(--transition);
+    }
+    /* Hide menu until toggled */
+    .nav-wrapper {
+        display: none;
+        width: 100%;
+    }
+    #nav-toggle:checked ~ .nav-wrapper {
+        display: block;
+    }
+    .container {
+        padding: 15px;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .search-box {
+        flex-direction: column;
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .page {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+    }
+    .menu-link {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+    .main-content {
+        padding: 15px;
+    }
+    .content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .tire-card {
+        padding: 15px;
+    }
+} 

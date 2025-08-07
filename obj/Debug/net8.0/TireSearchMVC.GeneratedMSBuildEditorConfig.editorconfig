@@ -1,0 +1,73 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TireSearchMVC
+build_property.RootNamespace = TireSearchMVC
+build_property.ProjectDir = /Users/bhan/Documents/works/sites/SizeVariant/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/bhan/Documents/works/sites/SizeVariant
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[/Users/bhan/Documents/works/sites/SizeVariant/Views/Brand/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQnJhbmQvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bhan/Documents/works/sites/SizeVariant/Views/BrandCodeDescription/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQnJhbmRDb2RlRGVzY3JpcHRpb24vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bhan/Documents/works/sites/SizeVariant/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bhan/Documents/works/sites/SizeVariant/Views/ParentGroup/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFyZW50R3JvdXAvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bhan/Documents/works/sites/SizeVariant/Views/Season/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2Vhc29uL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bhan/Documents/works/sites/SizeVariant/Views/Segment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VnbWVudC9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bhan/Documents/works/sites/SizeVariant/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bhan/Documents/works/sites/SizeVariant/Views/SizeVariant/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2l6ZVZhcmlhbnQvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bhan/Documents/works/sites/SizeVariant/Views/SpecialUsage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU3BlY2lhbFVzYWdlL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bhan/Documents/works/sites/SizeVariant/Views/TsSegment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHNTZWdtZW50L0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bhan/Documents/works/sites/SizeVariant/Views/VehicleGroup/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVoaWNsZUdyb3VwL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bhan/Documents/works/sites/SizeVariant/Views/VehicleModel/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVoaWNsZU1vZGVsL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bhan/Documents/works/sites/SizeVariant/Views/VehicleVersion/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVmVoaWNsZVZlcnNpb24vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
