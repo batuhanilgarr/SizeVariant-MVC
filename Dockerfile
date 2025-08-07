@@ -6,16 +6,16 @@ EXPOSE 8080
 # Use the .NET 8 SDK for building
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["SizeVariant.csproj", "."]
-RUN dotnet restore "./SizeVariant.csproj"
+COPY ["TireSearchMVC.csproj", "."]
+RUN dotnet restore "./TireSearchMVC.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "SizeVariant.csproj" -c Release -o /app/build
+RUN dotnet build "TireSearchMVC.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "SizeVariant.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "TireSearchMVC.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "SizeVariant.dll"]
+ENTRYPOINT ["dotnet", "TireSearchMVC.dll"]
