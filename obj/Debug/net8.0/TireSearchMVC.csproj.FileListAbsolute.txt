@@ -35,3 +35,5 @@
 /Users/bhan/Documents/works/sites/SizeVariant/bin/Debug/net8.0/TireSearchMVC.staticwebassets.endpoints.json
 /Users/bhan/Documents/works/sites/SizeVariant/obj/Debug/net8.0/staticwebassets.build.endpoints.json
 /Users/bhan/Documents/works/sites/SizeVariant/obj/Debug/net8.0/staticwebassets/msbuild.TireSearchMVC.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+/Users/bhan/Documents/works/sites/SizeVariant/bin/Debug/net8.0/Data/daily-stats.json
+/Users/bhan/Documents/works/sites/SizeVariant/obj/Debug/net8.0/TireSearchMVC.sourcelink.json

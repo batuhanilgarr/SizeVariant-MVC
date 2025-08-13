@@ -36,5 +36,6 @@
 /Users/bhan/Documents/works/sites/SizeVariant/obj/Debug/net9.0/TireSearchMVC.pdb
 /Users/bhan/Documents/works/sites/SizeVariant/obj/Debug/net9.0/TireSearchMVC.genruntimeconfig.cache
 /Users/bhan/Documents/works/sites/SizeVariant/obj/Debug/net9.0/ref/TireSearchMVC.dll
+/Users/bhan/Documents/works/sites/SizeVariant/obj/Debug/net9.0/TireSearchMVC.sourcelink.json
 /Users/bhan/Documents/works/sites/SizeVariant/bin/Debug/net9.0/Data/daily-stats.json
-/Users/bhan/Documents/works/sites/SizeVariant/obj/Debug/net9.0/compressed/cyhbkpzh38-6kpg86htbt.gz
+/Users/bhan/Documents/works/sites/SizeVariant/obj/Debug/net9.0/compressed/cyhbkpzh38-imisgrj53a.gz

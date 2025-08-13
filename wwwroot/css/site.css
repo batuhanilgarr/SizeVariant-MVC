@@ -339,7 +339,7 @@ article{
     color: white;
     padding: 4px 8px;
     border-radius: 12px;
-    font-size: 0.75rem;
+    font-size: 0.55rem;
     font-weight: bold;
     z-index: 1;
 }
@@ -364,7 +364,7 @@ article{
 
 .brand-badge {
     display: inline-block;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, blue, green);
     color: white;
     padding: 4px 12px;
     border-radius: 20px;

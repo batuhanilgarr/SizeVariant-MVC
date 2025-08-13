@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TireSearchMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2221957d2730b36c19c8136190187243015f1512")]
 [assembly: System.Reflection.AssemblyProductAttribute("TireSearchMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TireSearchMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

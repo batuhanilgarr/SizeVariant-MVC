@@ -1,16 +1,16 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAssetEndpoint Include="_content/TireSearchMVC/css/site.6kpg86htbt.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"6kpg86htbt"},{"Name":"integrity","Value":"sha256-mupaC5PBrFuL5CqeWGguJaH3NHl6QSlUSJhieWjh/nU="},{"Name":"label","Value":"_content/TireSearchMVC/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"12165"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022mupaC5PBrFuL5CqeWGguJaH3NHl6QSlUSJhieWjh/nU=\u0022"},{"Name":"Last-Modified","Value":"Thu, 07 Aug 2025 11:01:05 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/TireSearchMVC/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-mupaC5PBrFuL5CqeWGguJaH3NHl6QSlUSJhieWjh/nU="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"12165"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022mupaC5PBrFuL5CqeWGguJaH3NHl6QSlUSJhieWjh/nU=\u0022"},{"Name":"Last-Modified","Value":"Thu, 07 Aug 2025 11:01:05 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tuYBY07NuSqtgE3M\u002BsdcAnHQ0dwGrZ9nKzk8LQT\u002By8k="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"12165"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022tuYBY07NuSqtgE3M\u002BsdcAnHQ0dwGrZ9nKzk8LQT\u002By8k=\u0022"},{"Name":"Last-Modified","Value":"Wed, 13 Aug 2025 08:58:45 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TireSearchMVC/css/site.imisgrj53a.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"imisgrj53a"},{"Name":"integrity","Value":"sha256-tuYBY07NuSqtgE3M\u002BsdcAnHQ0dwGrZ9nKzk8LQT\u002By8k="},{"Name":"label","Value":"_content/TireSearchMVC/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"12165"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022tuYBY07NuSqtgE3M\u002BsdcAnHQ0dwGrZ9nKzk8LQT\u002By8k=\u0022"},{"Name":"Last-Modified","Value":"Wed, 13 Aug 2025 08:58:45 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/TireSearchMVC/js/site.9r5g87a6fr.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>

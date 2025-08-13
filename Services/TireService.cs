@@ -40,7 +40,7 @@ public class TireService : ITireService
         }
 
         var result = await FetchBridgestoneAsync();
-        _cache.Set(cacheKey, result, TimeSpan.FromHours(4));
+        _cache.Set(cacheKey, result, TimeSpan.FromMinutes(15));
         return result;
     }
 
@@ -70,7 +70,7 @@ public class TireService : ITireService
         }
 
         var result = await FetchLassaAsync();
-        _cache.Set(cacheKey, result, TimeSpan.FromHours(4));
+        _cache.Set(cacheKey, result, TimeSpan.FromMinutes(15));
         return result;
     }
 

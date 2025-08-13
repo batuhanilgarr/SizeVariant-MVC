@@ -75,7 +75,7 @@ app.UseAuthorization();
 // Map MVC routes
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=SizeVariant}/{action=Index}/{id?}");
 
 // Map API routes
 app.MapControllers();

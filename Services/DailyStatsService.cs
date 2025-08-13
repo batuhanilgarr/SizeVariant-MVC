@@ -35,26 +35,26 @@ public class DailyStatsService : IDailyStatsService
         var previousStats = await LoadStatsForDateAsync(yesterday);
         var currentStats = CreateDailyStats(currentTires, today);
         
+        // Get current tire codes
+        var currentCodes = new HashSet<string>(currentTires
+            .Where(t => !string.IsNullOrEmpty(t.Code))
+            .Select(t => t.Code!)
+            .Distinct());
+        
         // Determine new products by comparing with previous day
         if (previousStats != null)
         {
-            var previousCodes = new HashSet<string>(previousStats.NewProductCodes);
-            var allPreviousCodes = await GetAllPreviousCodesAsync(yesterday);
+            // Get all codes that existed on previous days (not just yesterday's new products)
+            var allPreviousCodes = await GetAllPreviousCodesAsync(today);
             
-            currentStats.NewProductCodes = currentTires
-                .Where(t => !string.IsNullOrEmpty(t.Code) && !allPreviousCodes.Contains(t.Code))
-                .Select(t => t.Code!)
-                .Distinct()
+            currentStats.NewProductCodes = currentCodes
+                .Where(code => !allPreviousCodes.Contains(code))
                 .ToList();
         }
         else
         {
-            // If no previous data, consider all as new
-            currentStats.NewProductCodes = currentTires
-                .Where(t => !string.IsNullOrEmpty(t.Code))
-                .Select(t => t.Code!)
-                .Distinct()
-                .ToList();
+            // If no previous data, don't mark anything as new (first run)
+            currentStats.NewProductCodes = new List<string>();
         }
 
         return new StatsComparisonModel
@@ -70,6 +70,13 @@ public class DailyStatsService : IDailyStatsService
         {
             var today = DateTime.Today;
             var stats = CreateDailyStats(tires, today);
+            
+            // Store all current tire codes, not just new ones
+            stats.NewProductCodes = tires
+                .Where(t => !string.IsNullOrEmpty(t.Code))
+                .Select(t => t.Code!)
+                .Distinct()
+                .ToList();
             
             var allStats = await LoadAllStatsAsync();
             
@@ -134,9 +141,10 @@ public class DailyStatsService : IDailyStatsService
         var allStats = await LoadAllStatsAsync();
         var codes = new HashSet<string>();
         
+        // Get all codes from all previous days (NewProductCodes field now contains all codes for that day)
         foreach (var stat in allStats.Where(s => s.Date.Date < beforeDate.Date))
         {
-            foreach (var code in stat.NewProductCodes)
+            foreach (var code in stat.NewProductCodes) // This now contains all codes, not just new ones
             {
                 codes.Add(code);
             }
